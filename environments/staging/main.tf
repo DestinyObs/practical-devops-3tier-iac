@@ -56,6 +56,7 @@ module "ec2" {
   ami_id              = var.ami_id
   instance_type       = var.instance_type
   subnet_id           = module.vpc.public_subnet_ids[0]
+  vpc_id              = module.vpc.vpc_id
   security_group_ids  = [module.alb.alb_security_group_id]
   key_name            = module.keypair.key_pair_name # Use generated key pair
   ec2_name            = "practical-devops-frontend"

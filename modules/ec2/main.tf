@@ -1,8 +1,9 @@
 # EC2 Security Group
+
 resource "aws_security_group" "ec2_sg" {
 	name        = "${var.ec2_name}-sg"
 	description = "Allow HTTP, HTTPS, and SSH"
-	vpc_id      = var.subnet_id # This should be vpc_id, but for simplicity, using subnet's VPC
+	vpc_id      = var.vpc_id
 
 	ingress {
 		from_port   = 22
@@ -31,6 +32,7 @@ resource "aws_security_group" "ec2_sg" {
 	tags = {
 		Name = "${var.ec2_name}-sg"
 	}
+
 }
 
 # EC2 Instance

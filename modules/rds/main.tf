@@ -37,7 +37,7 @@ resource "aws_db_instance" "this" {
 	identifier              = var.rds_name
 	allocated_storage       = 20
 	engine                  = "postgres"
-	engine_version          = "15.3"
+	engine_version          = "17.6"
 	instance_class          = var.db_instance_class
 		# name                 = var.db_name # Removed due to engine compatibility error
 	username                = var.db_username

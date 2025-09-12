@@ -59,5 +59,5 @@ module "ec2" {
   vpc_id              = module.vpc.vpc_id
   security_group_ids  = [module.alb.alb_security_group_id]
   key_name            = module.keypair.key_pair_name # Use generated key pair
-  ec2_name            = "practical-devops-frontend"
+  ec2_name            = "practical-devops-appserver"
 }
